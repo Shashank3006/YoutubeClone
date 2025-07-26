@@ -1,0 +1,175 @@
+.create-channel-modal-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(33,33,33,0.18);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-channel-modal {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    min-width: 350px;
+    max-width: 420px;
+    width: 100%;
+    padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.18s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.create-channel-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    /* margin-bottom: 1.2rem; */
+    text-align: left;
+    width: 100%;
+}
+
+.create-channel-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-channel-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-bottom: 1.2rem; */
+}
+
+.create-channel-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: #eee;
+    object-fit: cover;
+    /* margin-bottom: 0.7rem; */
+    border: 1.5px solid #e5e5e5;
+}
+
+.create-channel-pic-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-channel-pic-select {
+    color: #065fd4;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-top: 0.1rem;
+}
+
+.create-channel-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* margin-bottom: 1.2rem; */
+}
+
+.create-channel-label {
+    font-size: 1rem;
+    color: #222;
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+}
+
+.create-channel-input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #f9f9f9;
+    outline: none;
+    margin-bottom: 0.1rem;
+    transition: border 0.18s;
+    resize: none;
+}
+
+.create-channel-input:focus {
+    border: 1.5px solid #065fd4;
+    background: #fff;
+}
+
+.create-channel-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.2rem;
+    width: 100%;
+    margin-top: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.create-channel-cancel {
+    background: none;
+    border: none;
+    color: #222;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    transition: background 0.13s;
+}
+
+.create-channel-cancel:hover {
+    background: #f1f1f1;
+}
+
+.create-channel-submit {
+    background: #065fd4;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.create-channel-submit:disabled {
+    background: #b3d3fa;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.create-channel-terms {
+    font-size: 0.93rem;
+    color: #606060;
+    margin-top: 0.7rem;
+    text-align: left;
+    width: 100%;
+}
+
+.create-channel-terms a {
+    color: #065fd4;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .create-channel-modal {
+        min-width: 0;
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    }
+}

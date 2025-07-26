@@ -1,0 +1,534 @@
+.channel-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.channel-banner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    margin-bottom: 0;
+}
+
+.channel-banner {
+    width: 100%;
+    max-width: 1100px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 24px;
+    margin-top: 1.5rem;
+    background: #eee;
+}
+
+.channel-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 2.2rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 1rem auto;
+    margin-bottom: 1.2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+    border-radius: 0 0 24px 24px;
+    /* margin-top: -40px; */
+    /* padding-top: 2.5rem; */
+}
+
+.channel-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+    border: 4px solid #fff;
+    /* margin-bottom: -1.5rem; */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    position: relative;
+    z-index: 2;
+    /* margin-top: -70px; */
+    align-self: center;
+}
+
+.channel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-width: 0;
+    flex: 1;
+}
+
+.channel-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.2rem;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.channel-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    color: #606060;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+}
+
+.channel-handle {
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.channel-dot {
+    font-size: 1.2rem;
+    color: #bbb;
+    margin: 0 0.2rem;
+}
+
+.channel-subs, .channel-videos {
+    color: #606060;
+    font-size: 1.05rem;
+}
+
+.channel-desc {
+    color: #444;
+    font-size: 1.08rem;
+    margin-bottom: 1.1rem;
+    margin-top: 0.2rem;
+    max-width: 600px;
+}
+
+.channel-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.channel-btn {
+    background: #f1f1f1;
+    color: #222;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 1.07rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    box-shadow: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.channel-btn.secondary {
+    background: #fff;
+    color: #222;
+    border: 1px solid #e5e5e5;
+    font-weight: 500;
+}
+
+.channel-btn.subscribe {
+    background: #0f0f0f;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.6rem 2.2rem;
+    font-size: 1.13rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    box-shadow: none;
+    outline: none;
+    margin-left: 0.5rem;
+}
+
+.channel-btn.subscribe:hover {
+    background: #222;
+    color: #fff;
+}
+
+.channel-btn:hover {
+    background: #e5e5e5;
+    color: #065fd4;
+}
+
+.channel-tabs {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 0.5rem auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-bottom: 1.5px solid #e5e5e5;
+    overflow: auto;
+    &::-webkit-scrollbar {
+            display: none;
+    }
+}
+
+.channel-tab {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #606060;
+    padding: 0.7rem 0.5rem;
+    cursor: pointer;
+    border-bottom: 2.5px solid transparent;
+    transition: color 0.13s, border 0.13s;
+}
+
+.channel-tab.active {
+    color: #222;
+    border-bottom: 2.5px solid #222;
+}
+
+.channel-videos-list {
+    width: 100%;
+    /* max-width: 1100px; */
+    margin: 1.5rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.channel-video-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    overflow: hidden;
+    /* width: 260px; */
+    min-width: 220px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: box-shadow 0.18s;
+}
+
+.channel-video-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.channel-video-thumb {
+    width: 100%;
+    height: 146px;
+    object-fit: cover;
+    background: #ddd;
+    border-radius: 12px 12px 0 0;
+}
+
+.channel-video-info {
+    padding: 0.8rem 0.8rem 0.7rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.channel-video-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 0.1rem;
+    line-height: 1.2;
+}
+
+.channel-video-meta {
+    font-size: 0.93rem;
+    color: #606060;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.channel-video-actions {
+    position: absolute;
+    bottom: 0.7rem;
+    right: 0.7rem;
+    z-index: 2;
+}
+
+.channel-video-meatball {
+    color: #606060;
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 50%;
+    transition: background 0.13s;
+    position: relative;
+}
+
+.channel-video-meatball:hover,
+.channel-video-meatball:focus {
+    background: #f1f1f1;
+}
+
+.channel-video-dropdown {
+    position: absolute;
+    bottom: 0;
+    right: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    min-width: 120px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem 0;
+    animation: fadeIn 0.14s;
+}
+
+.channel-video-dropdown-item {
+    background: none;
+    border: none;
+    color: #222;
+    font-size: 1rem;
+    text-align: left;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.13s;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.channel-video-dropdown-item:hover {
+    background: #f5f5f5;
+}
+
+.channel-video-dropdown-item.delete {
+    color: #e53935;
+}
+
+.edit-channel-modal-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Prevent background scroll when modal is open */
+    overflow: hidden;
+}
+
+.edit-channel-modal {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    padding: 2rem 2.5rem;
+    min-width: 340px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.edit-channel-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: #222;
+}
+
+.edit-channel-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.edit-channel-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 0.2rem;
+}
+
+.edit-channel-input {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    outline: none;
+    transition: border 0.13s;
+}
+
+.edit-channel-input:focus {
+    border: 1.5px solid #065fd4;
+}
+
+.edit-channel-banner-preview {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.7rem;
+    background: #eee;
+}
+
+.edit-channel-avatar-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+    margin-bottom: 0.7rem;
+    border: 2px solid #e5e5e5;
+}
+
+.edit-channel-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.edit-channel-cancel {
+    background: #fff;
+    color: #065fd4;
+    border: 1.5px solid #065fd4;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    display: flex;
+    align-items: center;
+}
+
+.edit-channel-cancel:hover {
+    background: #e3f0ff;
+}
+
+.edit-channel-save {
+    background: #065fd4;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    display: flex;
+    align-items: center;
+}
+
+.edit-channel-save:disabled {
+    background: #b3d3fa;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .channel-header, .channel-tabs, .channel-videos-list {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .channel-banner {
+        border-radius: 12px;
+    }
+    .channel-header {
+        border-radius: 0 0 12px 12px;
+        margin-top: -30px;
+        padding-top: 2rem;
+    }
+    .channel-avatar {
+        width: 90px;
+        height: 90px;
+        margin-top: -45px;
+    }
+}
+
+@media (max-width: 600px) {
+    .channel-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        border-radius: 0 0 8px 8px;
+        margin-top: -20px;
+        padding-top: 1.2rem;
+    }
+    .channel-avatar {
+        width: 70px;
+        height: 70px;
+        margin-top: -35px;
+    }
+    .channel-title {
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+    }
+    .channel-banner {
+        height: 90px;
+        border-radius: 8px;
+    }
+    .channel-videos-list {
+        gap: 0.7rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+    }
+    .channel-video-card {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media(max-width: 1050px) {
+    .channel-videos-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .channel-videos-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 457px) {
+    .channel-videos-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .channel-tabs {
+        gap: 0.1rem;
+    }
+    .channel-btn {
+        font-size: revert;
+    }
+}
