@@ -30,7 +30,17 @@ function Register() {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+ // Reset all fields and OTP states
+  const resetForm = () => {
+    clearTimeout(otpTimerRef.current);
+    otpTimerRef.current = null;
 
+    setForm({ username: '', email: '', avatar: '', password: '' });
+    setEnteredOtp('');
+    setGeneratedOtp('');
+    setOtpSent(false);
+    setOtpTimestamp(null);
+  };
   // Function to generate OTP
   const handleGenerateOtp = () => {
     const { username, email, password } = form;
@@ -51,9 +61,11 @@ function Register() {
     setGeneratedOtp(otp);
     setOtpTimestamp(Date.now());
     setOtpSent(true);
-
+console.log("your otp is :"+otp) 
     // Alert user (simulating sending OTP via email)
-    alert(`📧 Your OTP is: ${otp} (valid for 2 minutes)`);
+    alert(`📧 Your OTP is: ${otp} (valid for 2 minutes)    otp also get console`
+
+    );
 
     // Set timeout to invalidate OTP after 2 minutes
     otpTimerRef.current = setTimeout(() => {
@@ -116,7 +128,7 @@ function Register() {
       });
 
       alert('✅ Registration successful! Please login.');
-
+resetForm();
       // Clear OTP timer
       clearTimeout(otpTimerRef.current);
       otpTimerRef.current = null;
@@ -124,6 +136,13 @@ function Register() {
       // Redirect to login page
       navigate('/login');
     } catch (err) {
+       setEnteredOtp('');
+       setGeneratedOtp('');
+       setOtpSent(false);
+       setOtpTimestamp(null);
+      clearTimeout(otpTimerRef.current);
+      otpTimerRef.current = null;
+
       console.error('Registration failed:', err.response?.data?.message || err.message);
       alert('Registration failed: ' + (err.response?.data?.message || 'Something went wrong.'));
     } finally {

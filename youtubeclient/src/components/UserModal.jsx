@@ -33,7 +33,8 @@ function UserModal({ onClose, setShowModal }) {
   const handleSignOut = () => {
     localStorage.removeItem('user');        // Clear user from localStorage
     setUser(null);                          // Update auth context to reflect logout
-    setShowModal(false);                    // Close modal
+    setShowModal(false);     
+    navigate("/login");                // Close modal
   };
 
   return (
